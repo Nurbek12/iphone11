@@ -1,0 +1,127 @@
+.container .phone .back{
+    position: absolute; 
+    width: 270px;
+    height: 500px;
+    background:linear-gradient(10deg,#888 15%,silver 50%,silver 100%);
+    border-radius: 30px;
+    transform-style: preserve-3d;
+    z-index: 0;
+    transition: all 2s;
+    transform:translateX(0px) translateY(0px) perspective(1000px) translateZ(-10px) rotateY(180deg);
+}
+.container .phone .back::after{
+    content: '';
+    position: absolute;
+    border: 1px solid #00000087;
+    width: 262px;
+    height: 491px;
+    border-radius: 30px;
+    z-index: 1;
+    top: 3px;
+    left: 3px;
+}
+.container .phone .back .cam{
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 25px;
+    transform-style: preserve-3d;
+    transform: translateZ(3px);
+    background: linear-gradient(10deg,#888 10%,silver 50%,silver 100%);
+    box-shadow:inset 0 0 2px 0px rgba(0,0,0,.8);
+    top: 15px;
+    left: 15px;
+}
+.container .phone .back .cam::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 84px;
+    height: 84px;
+    background: linear-gradient(10deg,#888 10%,silver 50%,silver 100%);
+    box-shadow:inset 0 0 2px 0px rgba(0,0,0,.8);
+    transform-style: preserve-3d;
+    transform: translateZ(3px);
+    border-radius: 25px;
+}
+.container .phone .back .cam .cam1{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(10deg,#888 10%,silver 50%,silver 100%);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transform: translateZ(3px);
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+    box-shadow:0 0 3px 1px rgba(0,0,0,.8);
+}
+.container .phone .back .cam .cam2{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform-style: preserve-3d;
+    transform: translateZ(3px);
+    background: linear-gradient(10deg,#888 10%,silver 50%,silver 100%);
+    border-radius: 50%;
+    z-index: 1;
+    top: 50px;
+    left: 10px;
+    box-shadow:0 0 3px 1px rgba(0,0,0,.8);
+}
+.container .phone .back .cam .cam1::before,
+.container .phone .back .cam .cam2::before{
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: #111;
+    border-radius: 50%;
+    z-index: 1;
+    top: 2px;
+    left: 2px;
+    box-shadow:0 0 3px 1px rgba(0,0,0,.8);
+}
+.container .phone .back .cam .cam1::after,
+.container .phone .back .cam .cam2::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgb(5, 5, 63);
+    border-radius: 50%;
+    z-index: 1;
+    top: 9px;
+    left: 9px;
+    box-shadow:0 0 3px 1px rgba(0,0,0,.8);
+}
+.container .phone .back h3{
+    position: absolute;
+    font-weight: 100;
+    font-family: sans-serif;
+    color: rgba(100,100,100,.8);
+    top: 360px;
+    left: 95px;
+}
+.container .phone .back .cam #fonar{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255,255,0,.7);
+    border-radius: 50%;
+    top: 35px;
+    left: 50px;
+    z-index: 3;
+    transform: translateZ(3px);
+}
+#fonar.active{
+    opacity: .5;
+    box-shadow: 0 0 7px 3px rgb(250 250 250),
+                0 0 8px 4px rgb(250 250 250 / 90%), 
+                0 0 9px 5px rgb(250 250 250 / 80%), 
+                0 0 33px 32px rgb(250 250 250 / 70%),
+                0 0 67px 103px rgb(250 250 250 / 60%), 
+                0 0 39px 80px rgb(250 250 250 / 50%);
+}

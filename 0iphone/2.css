@@ -1,0 +1,142 @@
+body{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    background: #222;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .phone{
+    box-sizing: border-box;
+    width: 280px;
+    display: flex;
+    position: absolute;
+    animation: arc 20s linear infinite;
+    transform-style: preserve-3d;
+    transform: perspective(1500px) rotateY(0deg);
+    top: 40px;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(0,0,0,.55);
+    border-radius: 40%;
+    filter: blur(50px);
+    transform-style: preserve-3d;
+    transform:perspective(1000px) rotateX(98deg) translateZ(-287px) translateY(-117px);
+}
+@keyframes arc{
+    0%{
+        transform:perspective(1500px) rotateY(0deg);
+    }
+    100%{
+        transform:perspective(1500px) rotateY(360deg);
+    }
+}
+.container .phone .front{
+    position: relative;
+    width: 270px;
+    z-index: 1;
+    height: 500px;
+    background: linear-gradient(10deg,#888 15%,silver 50%,silver 100%);
+    border-radius: 30px;
+    transform: translateZ(10px) perspective(1000px);
+    transform-style: preserve-3d;
+}
+.container .phone .front .imag{
+    position: relative;
+    width: 240px;
+    height: 470px;
+    border: 10px solid #222;
+    border-radius: 30px;
+    overflow: hidden;
+    background: linear-gradient(25deg,#000,#333);;
+    top: 5px;
+    left: 5px;
+    transform: translateZ(2px)
+}
+.container .phone .front .imag img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-out;
+}
+.container .phone .front .imag::before{
+    content: '';
+    position: absolute;
+    width: 142px;
+    height: 20px;
+    left: 48px;
+    background: #222;
+    z-index: 1;
+    border-radius: 0 0 15px 15px;
+}
+.container .phone .front .imag::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 2px;
+    left: 60px;
+    background: rgb(6, 6, 112);
+    z-index: 1;
+    box-shadow: 0 0 0px 2px #000;
+    border-radius: 50%;
+}
+#screen.active{
+    opacity: 0;
+}
+#blok{
+    top: 10px;
+    left: 9px;
+    position: relative;
+    width: 40px;
+    height: 60px;
+    outline: none;
+    border-radius: 20px;
+    background: rgba(200,200,200,.8);
+}
+#clock{
+    position:absolute;
+    color: #fff;
+    display: flex;
+    z-index: 2;
+    top: 50px;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    text-align: center;
+    font-size: 55px;
+    left: 52px;
+    transition: all .5s ease-out;
+    text-shadow: 0 0 20px rgba(0,0,0,.55);
+}
+#clock.active{
+    opacity: 0;
+}
+.panel{
+    top: 50px;
+    left: 20px;
+    justify-content: center;
+    position: absolute;
+    display: block;
+    width: 58px;
+    background: rgba(50,0,0,.2);
+    border-radius: 20px;
+    height: 140px;
+    backdrop-filter:blur(2px);
+}
+#data,
+#mon{
+    position: relative;
+    font-size: 15px;
+    transform: translate(-110px,70px);
+}

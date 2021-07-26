@@ -1,0 +1,58 @@
+.apple{
+    position: relative;
+    justify-content: center; 
+    display: flex;
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    transform: translate(40%,50%);
+}
+.apple::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    background: silver;
+    border-radius: 50%;
+    top: 55px;
+    left: 95px;
+}
+.apple .list{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    transform: translate(2%,-20%);
+    background: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.apple .list::after{
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background:#444;
+    transform: translate(48%,40%);
+    border-radius: 50%;
+}
+.apple .appl{
+    position: absolute;
+    width: 67px;
+    transform: rotate(-17deg);
+    height: 89px;
+    background:#444;
+    border-radius: 50px;
+    top: 47px;
+    left: 29px;
+}
+.apple .appl:nth-child(2){
+    position: absolute;
+    width: 67px;
+    transform: rotate(17deg);
+    height: 89px;
+    background:#444;
+    border-radius: 50px;
+    top: 47px;
+    left: 60px;
+}
